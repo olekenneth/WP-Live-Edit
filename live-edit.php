@@ -1,8 +1,8 @@
 <?php
 /*
-	Plugin Name: Live Edit
-	Plugin URI: http://wordpress.org/extend/plugins/live-edit
-	Description: Live Edit is a Wordpress plugin that allows you to edit the content and blog posts live on the site. Without going back and forth between the admin panel and the site. Completely WYSIWYG editing.
+	Plugin Name: WP Live Edit
+	Plugin URI: http://wordpress.org/extend/plugins/wp-live-edit
+	Description: WP Live Edit is a Wordpress plugin that allows you to edit the content and blog posts live on the site. Without going back and forth between the admin panel and the site. Completely WYSIWYG editing.
 	Version: 0.1.0
 	Author: Ole-Kenneth Rangnes
 	Author URI: http://olekenneth.com

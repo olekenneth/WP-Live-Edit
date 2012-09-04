@@ -1,4 +1,4 @@
-=== Live Edit ===
+=== WP Live Edit ===
 Contributors: olekenneth
 Donate link: http://olekenneth.com/
 Tags: admin, edit, editor, live, wysiwyg, update, save
@@ -8,11 +8,11 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Live Edit is Wordpress plugin that enable the user to update the content, live, on the blog.
+WP Live Edit is Wordpress plugin that enable the user to update the content, live, on the blog.
 
 == Description ==
 
-Live Edit is Wordpress plugin that enable the user to update the content, live, on the blog. Don't waste time going back and forth between the admin panel and the site. Just update the content emediently while reading the blog post. The plugin is using WPs strict user control access before enabling this feature, so only the users allow to edit the blog post can do it.
+WP Live Edit is Wordpress plugin that enable the user to update the content, live, on the blog. Don't waste time going back and forth between the admin panel and the site. Just update the content emediently while reading the blog post. The plugin is using WPs strict user control access before enabling this feature, so only the users allow to edit the blog post can do it.
 
 == Installation ==
 
@@ -34,7 +34,7 @@ No. But for other themes you need to specify which fields is the title and conte
 == Screenshots ==
 
 1. Settings panel.
-2. Live edit in action.
+2. WP Live edit in action.
 
 == Changelog ==
 
