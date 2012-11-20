@@ -3,7 +3,7 @@
 	Plugin Name: WP Live Edit
 	Plugin URI: http://wordpress.org/extend/plugins/wp-live-edit
 	Description: WP Live Edit is a Wordpress plugin that allows you to edit the content and blog posts live on the site. Without going back and forth between the admin panel and the site. Completely WYSIWYG editing.
-	Version: 0.1.0
+	Version: 1.1
 	Author: Ole-Kenneth Rangnes
 	Author URI: http://olekenneth.com
 */
@@ -12,6 +12,7 @@ class liveEdit {
 
 	private $title_class,
 	$content_class,
+	$post_id,
 	$prefix = "liveEdit_";
 
 
@@ -22,7 +23,7 @@ class liveEdit {
 	}
 
 	function liveEditAddjQueryDocumentReady() {
-		$id = get_the_ID();
+		$id = $this->post_id;
 		$url = plugins_url('/live-edit.php?save=y', __FILE__);
 		$nonce = wp_create_nonce('DBzFAMJ');
 
@@ -37,7 +38,10 @@ EOF;
 	}
 
 	function liveEditFooter() {
-		if (is_single() && current_user_can('edit_post', get_the_ID()) ) {
+		global $wp_query;
+		$this->post_id = $wp_query->post->ID;
+
+		if ( ( is_single() || is_page() ) && current_user_can('edit_post', $this->post_id) ) {
 			add_action('wp_enqueue_scripts', array(&$this, 'liveEditAddScripts'));
 			add_action('wp_print_footer_scripts', array(&$this, 'liveEditAddjQueryDocumentReady'));
 		}
@@ -119,10 +123,8 @@ if (isset($_GET['save'])) {
 			));
 	}
 
-	echo json_encode(array("success" => true));
+	echo json_encode(array("success" => true, $_POST['field'] => $_POST['content'], "post_id" => $insert));
 	exit;
 } else {
 	new liveEdit();	
 }
-
-

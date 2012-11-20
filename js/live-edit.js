@@ -18,15 +18,14 @@ jQuery.fn.editable = function(options) {
 	editable.addClass("liveEdit_editable")
 		.click(function(clickEvent) {
 			clickEvent.preventDefault();
+			$(this).unbind("focus").unbind("blur");
 
         	jQuery(".active")
         		.removeClass("liveEdit_active")
         		.attr('contenteditable', '');
 
-			editable.removeClass("liveEdit_editable")
-				.off('focus')
-				.off("blur");
-
+			editable.removeClass("liveEdit_editable");
+			
 		    editable.focus(function(e){
 	    		jQuery(this).addClass("liveEdit_active");
 		    });
